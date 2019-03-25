@@ -82,6 +82,8 @@ DATABASES = {
     }
 }
 
+
+# Uncomment to use a mysql database
 # DATABASES = {'default': {
 # 							'ENGINE': 'django.db.backends.mysql',
 # 							'NAME': 'back_market',
@@ -124,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = "/static/"
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)

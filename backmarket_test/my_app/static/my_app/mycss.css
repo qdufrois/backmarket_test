@@ -1,0 +1,70 @@
+h1{    
+    color: rgb(51, 173, 92);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container-2{
+    background-color: rgb(202, 226, 186);
+    border: 4px solid transparent;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.container-3{
+    align-self: left;
+    width: 30%;
+    text-align: center;
+}
+
+.col-home{
+    font-size: 200%;
+    text-align: center;
+    background-color:rgb(51, 173, 92);
+    border: 10px solid transparent;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 20px;
+    box-shadow: 6px 6px 20px black;
+ }
+
+.col-home:hover{
+    background-color:rgb(39, 107, 62);
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.table{
+    text-align: center;
+ }
+
+h3{
+    color: white;
+    font-size: 250%;
+    font-weight: bold;
+}
+
+.highlight{
+    background-color: rgb(202, 226, 186);
+}
+
+.list-group-item-secondary{
+    text-align: left;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.badge{
+    font-size: 80%;
+}
+
+.cont-details{
+    max-width: 50%
+}

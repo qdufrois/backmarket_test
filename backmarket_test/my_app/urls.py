@@ -5,4 +5,6 @@ from my_app.views import home
 
 app_name = "my_app"
 
-urlpatterns = [url(r"^$", home, name="home")]
+urlpatterns = [
+    url(r"^$", home, name="home"),
+]

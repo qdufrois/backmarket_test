@@ -16,9 +16,21 @@
 
         <div class='container'>
 
-            <h1>Hello World!</h1> 
+            <h1>Welcome on the back market weather app</h1> 
 
         </div>
+
+    {% if sent %} 
+
+    {{ city }}
+
+    {% else %}
+    <form action="{% url 'my_app:home' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}    
+    <input type="submit" name="fill_content" value="Submit" />
+
+    {% endif %}
 
     </body>
 

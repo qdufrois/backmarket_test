@@ -29,10 +29,18 @@
         <li> The minimum temperature is {{min_temp}}°C</li>
         <li> The maximum temperature is {{max_temp}}°C </li>
         <li> The wind speed is {{wind_speed}} </li>
-        <li> The humidity percentage is {{humidity}}%% </li>
+        <li> The humidity percentage is {{humidity}}% </li>
+
+    <p> In three days </p>
+    <ul>
+        <li> The minimum temperature will be {{min_temp_3}}°C</li>
+        <li> The maximum temperature will be {{max_temp_3}}°C </li>
+        <li> The wind speed will be {{wind_speed_3}} </li>
+        <li> The humidity percentage will be {{humidity_3}}% </li>
 
 
     {% else %}
+
     <form action="{% url 'my_app:home' %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}    

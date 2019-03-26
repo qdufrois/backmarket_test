@@ -22,9 +22,11 @@ def home(request):
             api_client = API_Request(city)
             woeid = api_client.woeid
 
-            # Checking the api find a city
+            # Checking the api found a city
             if woeid:
                 weather = api_client.get_weather()
+
+                # Getting data for today weather
 
                 city = parse_weather(weather).city
                 country = parse_weather(weather).country
@@ -33,6 +35,16 @@ def home(request):
                 current_temp = parse_weather(weather).current_temp
                 wind_speed = parse_weather(weather).wind_speed
                 humidity = parse_weather(weather).humidity
+
+                # Getting data for 3 days weather
+
+
+                city_3 = parse_weather(weather, 3).city
+                country_3 = parse_weather(weather, 3).country
+                min_temp_3 = parse_weather(weather, 3).min_temp
+                max_temp_3 = parse_weather(weather, 3).max_temp              
+                wind_speed_3 = parse_weather(weather, 3).wind_speed
+                humidity_3 = parse_weather(weather, 3).humidity               
 
                 sent = True
 

@@ -10,8 +10,8 @@ from weather import parse_weather
 
 
 def home(request):
-    """View rendering the home page. In case of a get, it will display a form 
-    taking a name of the city the user wants infos on. In case of post, it 
+    """View rendering the home page. If the request is a GET, it will display a form 
+    taking a name of the city the user wants infos on. If the request is a POST, it 
     will display weather forecast informations"""
 
     if request.method == "POST":
@@ -22,7 +22,7 @@ def home(request):
             api_client = API_Request(city)
             woeid = api_client.woeid
 
-            # Checking the api found a city
+            # Checking that the api found a city
             if woeid:
                 weather = api_client.get_weather()
 
@@ -38,13 +38,12 @@ def home(request):
 
                 # Getting data for 3 days weather
 
-
                 city_3 = parse_weather(weather, 3).city
                 country_3 = parse_weather(weather, 3).country
                 min_temp_3 = parse_weather(weather, 3).min_temp
-                max_temp_3 = parse_weather(weather, 3).max_temp              
+                max_temp_3 = parse_weather(weather, 3).max_temp
                 wind_speed_3 = parse_weather(weather, 3).wind_speed
-                humidity_3 = parse_weather(weather, 3).humidity               
+                humidity_3 = parse_weather(weather, 3).humidity
 
                 sent = True
 

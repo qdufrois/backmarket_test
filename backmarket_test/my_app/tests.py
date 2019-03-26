@@ -25,10 +25,11 @@ class TestHome(TestCase):
         """testing if the form is valid"""
         form = CityForm(data=self.data_city)
         self.assertTrue(form.is_valid())
+        
 
     def test_post(self):
-        """Testing is a working city passed as a post displays well the
-        expected informations"""
+        """Testing if the view displays well the expected informations if a valid 
+        city was passed in the form post"""         
         response = self.client.post(reverse("my_app:home"), self.data_city)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(

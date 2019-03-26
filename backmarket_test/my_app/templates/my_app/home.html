@@ -22,29 +22,29 @@
 
     {% if sent %} 
 
-    <p> Please find the weather of {{ city }} in {{ country }} </p>
-    <p> For today: </p>
-    <ul>
-        <li> The current temperature is {{current_temp}}°C </li>
-        <li> The minimum temperature is {{min_temp}}°C</li>
-        <li> The maximum temperature is {{max_temp}}°C </li>
-        <li> The wind speed is {{wind_speed}} </li>
-        <li> The humidity percentage is {{humidity}}% </li>
+        <p> Please find the weather of {{ city }} in {{ country }} </p>
+        <p> For today: </p>
+            <ul>
+                <li> The current temperature is {{current_temp}}°C </li>
+                <li> The minimum temperature is {{min_temp}}°C</li>
+                <li> The maximum temperature is {{max_temp}}°C </li>
+                <li> The wind speed is {{wind_speed}} </li>
+                <li> The humidity percentage is {{humidity}}% </li>
 
-    <p> In three days </p>
-    <ul>
-        <li> The minimum temperature will be {{min_temp_3}}°C</li>
-        <li> The maximum temperature will be {{max_temp_3}}°C </li>
-        <li> The wind speed will be {{wind_speed_3}} </li>
-        <li> The humidity percentage will be {{humidity_3}}% </li>
-
+        <p> In three days: </p>
+            <ul>
+                <li> The minimum temperature will be {{min_temp_3}}°C</li>
+                <li> The maximum temperature will be {{max_temp_3}}°C </li>
+                <li> The wind speed will be {{wind_speed_3}} </li>
+                <li> The humidity percentage will be {{humidity_3}}% </li>
+            </ul>
 
     {% else %}
 
-    <form action="{% url 'my_app:home' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}    
-    <input type="submit" name="fill_content" value="Submit" />
+        <form action="{% url 'my_app:home' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}    
+        <input type="submit" name="fill_content" value="Submit" />
 
     {% endif %}
 

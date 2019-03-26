@@ -22,7 +22,15 @@
 
     {% if sent %} 
 
-    {{ city }}
+    <p> Please find the weather of {{ city }} in {{ country }} </p>
+    <p> For today: </p>
+    <ul>
+        <li> The current temperature is {{current_temp}}°C </li>
+        <li> The minimum temperature is {{min_temp}}°C</li>
+        <li> The maximum temperature is {{max_temp}}°C </li>
+        <li> The wind speed is {{wind_speed}} </li>
+        <li> The humidity percentage is {{humidity}}%% </li>
+
 
     {% else %}
     <form action="{% url 'my_app:home' %}" method="POST">
